@@ -54,9 +54,14 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 mb-5 group">
-              <div className="w-10 h-10 bg-ept-green rounded-sm flex items-center justify-center shrink-0">
-                <span className="text-white font-heading font-bold text-sm">EPT</span>
-              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/logo/logo.png"
+                alt="Event Planners Tanzania"
+                width={44}
+                height={44}
+                style={{ display: "block", filter: "drop-shadow(0 0 6px rgba(0,0,0,0.55))" }}
+              />
               <div className="leading-tight">
                 <div className="text-ept-green font-heading font-bold text-base">Event Planners</div>
                 <div className="text-white font-heading font-bold text-base">Tanzania</div>

@@ -6,7 +6,7 @@ import { ChevronDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-24">
       {/* Background — swap div for next/image once hero photo is in /public/images/hero/ */}
       <div className="absolute inset-0 bg-ept-navy" />
       <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-950/90 to-ept-navy/80" />

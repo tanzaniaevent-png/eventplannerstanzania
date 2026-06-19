@@ -34,10 +34,14 @@ export default function Header() {
       <div className="container-max flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 group">
-          {/* TODO: swap to <Image src="/logo/logo.png" alt="..." width={44} height={44} /> once logo file is in public/logo/ */}
-          <div className="w-10 h-10 bg-ept-green rounded-sm flex items-center justify-center shrink-0">
-            <span className="text-white font-heading font-bold text-sm">EPT</span>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/logo/logo.png"
+            alt="Event Planners Tanzania"
+            width={52}
+            height={52}
+            style={{ display: "block", filter: "drop-shadow(0 0 6px rgba(0,0,0,0.55))" }}
+          />
           <div className="leading-tight">
             <div className="text-ept-green font-heading font-bold text-base">Event Planners</div>
             <div className="text-white font-heading font-bold text-base">Tanzania</div>
