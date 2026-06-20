@@ -1,12 +1,22 @@
 import type { Metadata } from "next";
 import { Lightbulb, HeartHandshake, Shield, Award, Users, Zap, Target } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import AboutImageRotator from "@/components/about/AboutImageRotator";
 
 export const metadata: Metadata = {
   title: "About Us",
   description:
     "Learn about Event Planners Tanzania — our mission, vision, and core values that drive us to deliver unforgettable events across Tanzania and East Africa.",
 };
+
+const team = [
+  { name: "Ernest C. Shenkunde", title: "CEO", photo: "/images/team/Ernest_C_Shenkunde _CEO 2.jpg" },
+  { name: "Godlove Gitela", title: "General Manager", photo: "/images/team/Godlove_Gitela_General_Manager 5.jpg" },
+  { name: "Isaya Mihafu", title: "Head of Sales & Marketing", photo: "/images/team/Isaya_Mihafu_Head_of_Sales_and_Marketing..jpeg" },
+  { name: "Ismail", title: "Head of ICT", photo: "/images/team/Ismail _Head_of_ICT 1.jpg" },
+  { name: "Lilian Anthony", title: "Administrator", photo: "/images/team/Lilian_Anthony_Administrator 4.jpg" },
+];
 
 const coreValues = [
   {
@@ -83,19 +93,10 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Office photo placeholder */}
+            {/* Auto-rotating images */}
             <div className="relative">
-              <div className="aspect-[4/3] bg-ept-navy rounded-sm overflow-hidden flex items-center justify-center">
-                {/* TODO: replace with <Image src="/images/team/office.jpg" alt="EPT office Twiga House" fill className="object-cover" /> */}
-                <div className="text-center px-8">
-                  <div className="w-14 h-14 bg-ept-green/20 rounded-sm flex items-center justify-center mx-auto mb-4">
-                    <div className="w-7 h-7 bg-ept-green rounded-sm" />
-                  </div>
-                  <p className="text-white/40 text-sm">Office / Team Photo</p>
-                  <p className="text-white/25 text-xs mt-1">/public/images/team/</p>
-                </div>
-              </div>
-              <div className="absolute -bottom-4 -right-4 bg-ept-green text-white p-5 rounded-sm">
+              <AboutImageRotator />
+              <div className="absolute -bottom-4 -right-4 bg-ept-green text-white p-5 rounded-sm z-10">
                 <p className="font-heading font-bold text-2xl">15+</p>
                 <p className="text-white/80 text-xs uppercase tracking-wide">Major Clients</p>
               </div>
@@ -159,6 +160,34 @@ export default function AboutPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="section-pad bg-gray-50">
+        <div className="container-max">
+          <div className="text-center mb-14">
+            <p className="text-ept-green text-xs font-semibold uppercase tracking-[0.2em] mb-3">The People Behind the Events</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900">Meet Our Team</h2>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+            {team.map((member, i) => (
+              <div key={member.name} className="group text-center">
+                <div className="aspect-square rounded-sm overflow-hidden relative mb-4 border border-gray-100 group-hover:border-ept-green group-hover:shadow-md transition-all">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover object-top"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw"
+                    priority={i === 0}
+                  />
+                </div>
+                <h3 className="font-heading font-bold text-gray-900 text-sm leading-snug">{member.name}</h3>
+                <p className="text-ept-green text-xs uppercase tracking-wider mt-1">{member.title}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

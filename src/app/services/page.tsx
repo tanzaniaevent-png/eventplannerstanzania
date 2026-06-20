@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ServicesNavDesktop, ServicesNavMobile } from "@/components/services/ServicesNav";
+import ServiceImageSwitcher from "@/components/services/ServiceImageSwitcher";
 
 export const metadata: Metadata = {
   title: "Our Services",
@@ -15,6 +17,10 @@ const services = [
     description:
       "We provide full solutions for corporate events, brand activations, and company gatherings. Our team handles every detail so you can focus on your guests and objectives.",
     items: ["Corporate conferences", "Product launches", "Award ceremonies", "Business networking events", "Company celebrations", "Press conferences"],
+    images: [
+      "/images/services/corporate-events.png",
+      "/images/services/corporate-events2.png",
+    ],
   },
   {
     id: "sound-systems",
@@ -22,6 +28,12 @@ const services = [
     description:
       "Professional audio equipment for presentations, conferences, and events of any scale. Every hire includes a professional sound engineer and full setup & dismantling service.",
     items: ["Line array speaker systems", "Wireless microphones", "Conference microphones", "Digital mixing consoles", "DJ sound systems", "Stage monitor speakers"],
+    images: [
+      "/images/services/sound-systems.png",
+      "/images/services/Professional sound engineer.png",
+      "/images/services/Wireless microphones.png",
+      "/images/services/Digital mixing consoles.png",
+    ],
   },
   {
     id: "stage-truss",
@@ -29,6 +41,16 @@ const services = [
     description:
       "Professional staging systems designed for corporate and entertainment events. From intimate breakout sessions to main-stage productions.",
     items: ["Modular stage platforms", "Aluminium truss systems", "Stage backdrops", "Branded stage designs", "Stage lighting rigs"],
+    images: [
+      "/images/services/struss daytime stage.png",
+      "/images/services/Aluminium truss systems.jpg",
+      "/images/services/performing stage of Aluminium truss systems.jpg",
+      "/images/services/performing stage of Aluminium truss systems (1).jpg",
+      "/images/services/performing stage of Aluminium truss systems (2).jpg",
+      "/images/services/performing stage of Aluminium truss systems (3).jpg",
+      "/images/services/performing stage of Aluminium truss systems day time.jpg",
+      "/images/services/performing stage of Aluminium truss systems day time (2).jpg",
+    ],
   },
   {
     id: "lighting",
@@ -36,6 +58,12 @@ const services = [
     description:
       "Create the perfect ambiance for any event — from intimate dinners to large-scale conferences. Our lighting team designs and operates every rig to match your vision.",
     items: ["LED stage lighting", "Moving head lights", "Spotlight systems", "Ambient event lighting", "LED uplighting"],
+    images: [
+      "/images/services/light stage night.png",
+      "/images/services/Moving head lights.png",
+      "/images/services/LED stage lighting.png",
+      "/images/services/Stage lighting rigs.png",
+    ],
   },
   {
     id: "led-screens",
@@ -43,6 +71,12 @@ const services = [
     description:
       "Modern visual technology for presentations and branding. High-resolution displays that ensure your content reaches every corner of the room.",
     items: ["LED display screens", "HD projectors", "Projection screens", "Presentation TVs", "Video switching systems"],
+    images: [
+      "/images/services/led-screens.png",
+      "/images/services/LED display screens.png",
+      "/images/services/HD projectors.png",
+      "/images/services/Projection screens.png",
+    ],
   },
   {
     id: "furniture",
@@ -50,6 +84,12 @@ const services = [
     description:
       "Comfortable and professional setups for any event format — from boardroom meetings to outdoor galas. We supply, deliver, and arrange everything.",
     items: ["VIP chairs", "Conference chairs", "Round tables", "Cocktail tables", "Exhibition booths", "Tents & marquees"],
+    images: [
+      "/images/services/furniture.png",
+      "/images/services/VIP chairs.png",
+      "/images/services/Round tables.png",
+      "/images/services/Tents & marquees.png",
+    ],
   },
   {
     id: "branding",
@@ -57,6 +97,12 @@ const services = [
     description:
       "Increase your event's visibility and brand recognition with our full-service branding solutions. From print to installation, we bring your brand to life.",
     items: ["Backdrop printing", "Roll-up banners", "Red carpet setup", "Step & repeat media walls", "Exhibition branding"],
+    images: [
+      "/images/services/Backdrop printing.jpg",
+      "/images/services/Step & repeat media walls.jpg",
+      "/images/services/Red carpet setup.png",
+      "/images/services/Roll-up banners.jpg",
+    ],
   },
   {
     id: "event-management",
@@ -64,6 +110,12 @@ const services = [
     description:
       "We handle every aspect of your event from planning to execution — so you experience the event, not the logistics.",
     items: ["Event planning", "Technical setup", "Event coordination", "Guest management", "Stage management"],
+    images: [
+      "/images/services/Event planning.png",
+      "/images/services/Event coordination and Guest management.png",
+      "/images/services/Stage management.jpeg",
+      "/images/services/Technical setup.png",
+    ],
   },
   {
     id: "catering",
@@ -71,6 +123,7 @@ const services = [
     description:
       "We offer professional catering services for corporate, social, and private events, including meetings, weddings, and parties. Local and international dishes using fresh, high-quality ingredients.",
     items: ["Buffet service", "Plated meals", "Menu planning", "Serving staff", "Catering equipment", "Local & international cuisine"],
+    images: ["/images/services/catering services.png"],
   },
   {
     id: "logistics",
@@ -78,6 +131,10 @@ const services = [
     description:
       "We provide efficient logistics and scheduling services to ensure smooth planning and execution. Our team coordinates transportation, equipment delivery, and setup while managing timelines.",
     items: ["Transportation coordination", "Equipment delivery", "Timeline management", "On-site scheduling", "Setup & dismantling"],
+    images: [
+      "/images/services/logistics and scheduling .png",
+      "/images/services/Setup & dismantling.png",
+    ],
   },
   {
     id: "destination",
@@ -85,6 +142,7 @@ const services = [
     description:
       "Comprehensive destination management for events held in various locations. With strong local knowledge and reliable partnerships, we customize each experience from arrival to departure.",
     items: ["Venue sourcing", "Accommodation arrangements", "Transportation logistics", "On-site support", "Local coordination"],
+    images: ["/images/services/Destination Management.png"],
   },
   {
     id: "interpretation",
@@ -92,6 +150,7 @@ const services = [
     description:
       "Professional interpretation services for effective communication across different languages. Both simultaneous and consecutive interpretation, tailored to the nature of each event.",
     items: ["Simultaneous interpretation", "Consecutive interpretation", "Conference support", "Real-time accuracy", "Full confidentiality"],
+    images: ["/images/services/Interpretation Services.png"],
   },
   {
     id: "photography",
@@ -99,6 +158,7 @@ const services = [
     description:
       "Professional photography and videography services capturing every important moment with creativity and precision — from corporate events and conferences to weddings and private functions.",
     items: ["Event photography", "Videography & filming", "Corporate coverage", "Conference documentation", "Post-production editing"],
+    images: ["/images/services/Photography & Video.png"],
   },
 ];
 
@@ -122,24 +182,22 @@ export default function ServicesPage() {
       <section className="section-pad bg-white">
         <div className="container-max">
 
-          {/* Mobile pill nav — shown only on mobile */}
+          {/* Mobile pill nav */}
           <div className="lg:hidden mb-10">
             <ServicesNavMobile />
           </div>
 
           {/* Desktop: sidebar + content */}
           <div className="flex gap-14">
-            {/* Desktop sidebar */}
             <div className="hidden lg:block">
               <ServicesNavDesktop />
             </div>
 
-            {/* Service sections */}
             <div className="flex-1 space-y-24 min-w-0">
               {services.map((service, i) => (
                 <div key={service.id} id={service.id} className="scroll-mt-28">
-                  <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center`}>
-                    {/* Text — alternates sides via order */}
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    {/* Text */}
                     <div className={i % 2 === 1 ? "lg:order-2" : ""}>
                       <span className="text-ept-green text-xs font-semibold uppercase tracking-[0.2em] mb-3 block">
                         {String(i + 1).padStart(2, "0")}
@@ -158,22 +216,25 @@ export default function ServicesPage() {
                       </ul>
                     </div>
 
-                    {/* Image — alternates sides */}
+                    {/* Image */}
                     <div className={i % 2 === 1 ? "lg:order-1" : ""}>
-                      <div className="aspect-[4/3] bg-gray-100 rounded-sm overflow-hidden flex items-center justify-center">
-                        {/* TODO: replace with <Image src={`/images/services/${service.id}.jpg`} alt={service.name} fill className="object-cover" /> */}
-                        <div className="text-center px-6">
-                          <div className="w-10 h-10 bg-ept-navy/10 rounded-sm flex items-center justify-center mx-auto mb-3">
-                            <div className="w-5 h-5 bg-ept-navy/20 rounded-sm" />
-                          </div>
-                          <p className="text-gray-400 text-xs">{service.name}</p>
-                          <p className="text-gray-300 text-[10px] mt-1">/images/services/{service.id}.jpg</p>
+                      {service.images.length === 1 ? (
+                        <div className="aspect-[4/3] rounded-sm overflow-hidden relative bg-gray-100">
+                          <Image
+                            src={service.images[0]}
+                            alt={service.name}
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 50vw"
+                            priority={i === 0}
+                          />
                         </div>
-                      </div>
+                      ) : (
+                        <ServiceImageSwitcher images={service.images} alt={service.name} priority={i === 0} />
+                      )}
                     </div>
                   </div>
 
-                  {/* Divider */}
                   {i < services.length - 1 && (
                     <div className="mt-16 border-b border-gray-100" />
                   )}

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle } from "lucide-react";
 
 const highlights = [
@@ -58,16 +59,13 @@ export default function CompanyIntro() {
             className="relative"
           >
             <div className="aspect-[4/3] bg-ept-navy rounded-sm overflow-hidden relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-ept-navy to-gray-950 flex items-center justify-center">
-                {/* TODO: replace with <Image src="/images/team/office.jpg" alt="Event Planners Tanzania team" fill className="object-cover" /> */}
-                <div className="text-center px-8">
-                  <div className="w-16 h-16 bg-ept-green/20 rounded-sm flex items-center justify-center mx-auto mb-4">
-                    <div className="w-8 h-8 bg-ept-green rounded-sm" />
-                  </div>
-                  <p className="text-white/40 text-sm">Office / Team Photo</p>
-                  <p className="text-white/25 text-xs mt-1">Add to /public/images/team/</p>
-                </div>
-              </div>
+              <Image
+                src="/images/services/office.png"
+                alt="Event Planners Tanzania team"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover"
+              />
             </div>
             {/* Accent block */}
             <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-ept-green/10 rounded-sm -z-10" />

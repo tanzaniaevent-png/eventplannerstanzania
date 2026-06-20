@@ -8,21 +8,21 @@ export const metadata: Metadata = {
 };
 
 const clients = [
-  { name: "ICB", full: "International Commercial Bank" },
-  { name: "Azania Bank", full: "Azania Bank" },
-  { name: "Government of Tanzania", full: "Government of Tanzania" },
-  { name: "TDB", full: "Trade & Development Bank" },
-  { name: "US Embassy", full: "Embassy of the United States" },
-  { name: "NMB Bank", full: "NMB Bank — Close to You" },
-  { name: "Tanzania Breweries", full: "Tanzania Breweries Ltd" },
-  { name: "Vodacom", full: "Vodacom Tanzania" },
-  { name: "UNDP", full: "United Nations Development Programme" },
-  { name: "DP World", full: "DP World Tanzania" },
-  { name: "TMRC", full: "Tanzania Mortgage Refinance Company Ltd" },
-  { name: "Africom", full: "Africom Energies & Engineering Group" },
-  { name: "UTT AMIS", full: "UTT AMIS" },
-  { name: "CRDB Bank", full: "CRDB Bank — The Bank That Listens" },
-  { name: "Action Medeor", full: "Action Medeor — International Healthcare" },
+  { name: "ICB", full: "International Commercial Bank", logo: "/images/clients/ICB-Logo-2.png" },
+  { name: "Azania Bank", full: "Azania Bank", logo: "/images/clients/Azania-Bank-Logo-Landscape.png" },
+  { name: "Government of Tanzania", full: "Government of Tanzania", logo: "/images/clients/coat-arms-tanzania.png" },
+  { name: "TDB", full: "Trade & Development Bank", logo: "/images/clients/tdb-logowhite.png" },
+  { name: "US Embassy", full: "Embassy of the United States", logo: "/images/clients/usa embassy.png" },
+  { name: "NMB Bank", full: "NMB Bank — Close to You", logo: "/images/clients/nmb-white-logo.png" },
+  { name: "Tanzania Breweries", full: "Tanzania Breweries Ltd", logo: "/images/clients/TZlogo.png" },
+  { name: "Vodacom", full: "Vodacom Tanzania", logo: "/images/clients/vodacom.png" },
+  { name: "UNDP", full: "United Nations Development Programme", logo: "/images/clients/UNDP.png" },
+  { name: "DP World", full: "DP World Tanzania", logo: "/images/clients/Dp world.png" },
+  { name: "TMRC", full: "Tanzania Mortgage Refinance Company Ltd", logo: "/images/clients/TMRC.png" },
+  { name: "Africom", full: "Africom Energies & Engineering Group", logo: "/images/clients/logo (1).png" },
+  { name: "UTT AMIS", full: "UTT AMIS", logo: "/images/clients/uttamislogof.png" },
+  { name: "CRDB Bank", full: "CRDB Bank — The Bank That Listens", logo: "/images/clients/CRDB.png" },
+  { name: "Action Medeor", full: "Action Medeor — International Healthcare", logo: "/images/clients/action medeor.png" },
 ];
 
 const industries = [
@@ -62,22 +62,23 @@ export default function ClientsPage() {
             </h2>
           </div>
 
-          {/* Logo grid — text-based until real logos are added */}
-          {/* TODO: replace each card with <Image src="/images/clients/[name].png" alt="..." /> once logos are in /public/images/clients/ */}
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
             {clients.map((client) => (
               <div
                 key={client.name}
                 className="group border border-gray-100 rounded-sm p-6 flex flex-col items-center justify-center text-center hover:border-ept-green hover:shadow-md transition-all cursor-default aspect-[4/3]"
               >
-                {/* Logo placeholder */}
-                <div className="w-10 h-10 bg-gray-100 rounded-sm flex items-center justify-center mb-3 group-hover:bg-ept-green/10 transition-colors">
-                  <span className="text-xs font-bold text-gray-400 group-hover:text-ept-green transition-colors">
-                    {client.name.slice(0, 3).toUpperCase()}
-                  </span>
-                </div>
-                <p className="text-gray-700 font-semibold text-xs leading-snug">{client.name}</p>
-                <p className="text-gray-400 text-[10px] mt-1 leading-snug">{client.full}</p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={client.logo}
+                  alt={client.name}
+                  width={160}
+                  height={56}
+                  className="w-full h-14 object-contain opacity-80 group-hover:opacity-100 transition-opacity"
+                />
+                <p className="text-gray-400 text-[10px] mt-3 uppercase tracking-widest group-hover:text-ept-green transition-colors leading-snug">
+                  {client.name}
+                </p>
               </div>
             ))}
           </div>

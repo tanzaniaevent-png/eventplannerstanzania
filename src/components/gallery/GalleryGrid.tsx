@@ -6,33 +6,55 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 
 export type GalleryImage = {
-  src: string | null;
+  src: string;
   alt: string;
   category: string;
 };
 
-const CATEGORIES = ["All", "Corporate Events", "Conferences", "Galas & Dinners", "Stage Production", "Sound & AV", "Branding"];
+const CATEGORIES = ["All", "Galas & Dinners", "Stage & Production", "Sound & AV", "Corporate Events"];
 
-// Placeholder gallery items — replace src with real paths once images are in /public/images/gallery/
-const PLACEHOLDER_IMAGES: GalleryImage[] = [
-  { src: null, alt: "Corporate conference setup — Vodacom", category: "Corporate Events" },
-  { src: null, alt: "National conference hall setup", category: "Conferences" },
-  { src: null, alt: "Gala dinner table settings", category: "Galas & Dinners" },
-  { src: null, alt: "Main stage truss structure", category: "Stage Production" },
-  { src: null, alt: "Line array sound system", category: "Sound & AV" },
-  { src: null, alt: "Step and repeat media wall", category: "Branding" },
-  { src: null, alt: "CRDB Bank conference room", category: "Corporate Events" },
-  { src: null, alt: "UNDP workshop setup", category: "Conferences" },
-  { src: null, alt: "Award ceremony stage", category: "Galas & Dinners" },
-  { src: null, alt: "LED screen installation", category: "Stage Production" },
-  { src: null, alt: "DJ sound system setup", category: "Sound & AV" },
-  { src: null, alt: "Exhibition booth branding", category: "Branding" },
-  { src: null, alt: "Business networking event", category: "Corporate Events" },
-  { src: null, alt: "International conference", category: "Conferences" },
-  { src: null, alt: "Product launch ceremony", category: "Galas & Dinners" },
-  { src: null, alt: "Outdoor stage production", category: "Stage Production" },
-  { src: null, alt: "Concert sound rig", category: "Sound & AV" },
-  { src: null, alt: "Red carpet setup", category: "Branding" },
+const GALLERY_IMAGES: GalleryImage[] = [
+  // Galas & Dinners
+  { src: "/images/gallery/_event setup.png", alt: "Rustic barn dinner with fairy lights and round tables", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (1).png", alt: "Elegant navy dinner table with candelabras", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (2).png", alt: "Outdoor tropical table setting with orange florals", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (11).png", alt: "Outdoor ceremony chairs with pink floral accents", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (12).png", alt: "Gold Chiavari chairs at outdoor ceremony", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (14).png", alt: "Elegant ballroom with pink chandeliers and floral centrepieces", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (15).png", alt: "Outdoor wedding ceremony with floral arch", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (16).png", alt: "Long dining table with green and gold accents", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (18).png", alt: "Dark and elegant dinner table with white florals", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (22).png", alt: "Long banquet table with flower centrepieces", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (23).png", alt: "Outdoor table setting with white flower centrepiece", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (25).png", alt: "Dark mirror dining table in chandelier room", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (26).png", alt: "Outdoor dinner at sunset with fairy lights", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (27).png", alt: "Rustic outdoor banquet with wildflower centrepieces", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (28).png", alt: "Outdoor long table with blue velvet chairs", category: "Galas & Dinners" },
+  { src: "/images/gallery/_event setup (30).png", alt: "Boho outdoor long table with pampas grass", category: "Galas & Dinners" },
+  // Stage & Production
+  { src: "/images/gallery/_event setup (5).png", alt: "White pagoda marquee exterior", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (6).png", alt: "Stage with dramatic red and white beam lighting", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (8).png", alt: "Truss lighting rig with LED fixtures", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (9).png", alt: "Outdoor truss stage rig", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (17).png", alt: "Decorative chandeliers with floral arrangements", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (19).png", alt: "VIP gold sofa with red rose wall backdrop", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (20).png", alt: "Grand chandelier entrance with crystal installations", category: "Stage & Production" },
+  { src: "/images/gallery/_event setup (21).png", alt: "White floral wall backdrop with fairy lights", category: "Stage & Production" },
+  // Stage & Production — performing stage additions
+  { src: "/images/gallery/performing stage of Aluminium truss systems (1).jpg", alt: "Performing stage with aluminium truss systems", category: "Stage & Production" },
+  { src: "/images/gallery/performing stage of Aluminium truss systems (3).jpg", alt: "Stage truss structure setup", category: "Stage & Production" },
+  { src: "/images/gallery/performing stage of Aluminium truss systems day time.jpg", alt: "Daytime performing stage setup", category: "Stage & Production" },
+  { src: "/images/gallery/performing stage of Aluminium truss systems day time (2).jpg", alt: "Daytime aluminium truss stage", category: "Stage & Production" },
+  // Sound & AV
+  { src: "/images/gallery/_event setup (4).png", alt: "Professional mixing console with microphone", category: "Sound & AV" },
+  { src: "/images/gallery/_event setup (7).png", alt: "Outdoor AV equipment setup at sunset", category: "Sound & AV" },
+  { src: "/images/gallery/_event setup (13).png", alt: "Headphones on mixing board", category: "Sound & AV" },
+  // Corporate Events
+  { src: "/images/gallery/_event setup (3).png", alt: "Large banquet hall with colourful chair sashes", category: "Corporate Events" },
+  { src: "/images/gallery/_event setup (10).png", alt: "Modern boardroom conference table", category: "Corporate Events" },
+  { src: "/images/gallery/_event setup (24).png", alt: "White ballroom with round tables and chair covers", category: "Corporate Events" },
+  { src: "/images/gallery/_event setup (29).png", alt: "Elegant indoor venue with tufted chairs", category: "Corporate Events" },
+  { src: "/images/gallery/_event setup (31).png", alt: "Event setup", category: "Galas & Dinners" },
 ];
 
 function Lightbox({
@@ -50,7 +72,6 @@ function Lightbox({
 }) {
   const img = images[index];
 
-  // Close on Escape, navigate with arrow keys
   if (typeof window !== "undefined") {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -69,7 +90,6 @@ function Lightbox({
       className="fixed inset-0 z-[200] bg-black/96 flex items-center justify-center"
       onClick={onClose}
     >
-      {/* Close */}
       <button
         onClick={onClose}
         className="absolute top-5 right-5 text-white/50 hover:text-white transition-colors z-10"
@@ -78,12 +98,10 @@ function Lightbox({
         <X size={30} />
       </button>
 
-      {/* Counter */}
       <p className="absolute top-6 left-1/2 -translate-x-1/2 text-white/40 text-xs tracking-widest uppercase">
         {index + 1} / {images.length}
       </p>
 
-      {/* Prev */}
       <button
         onClick={(e) => { e.stopPropagation(); onPrev(); }}
         className="absolute left-4 md:left-8 text-white/50 hover:text-white transition-colors z-10"
@@ -92,35 +110,21 @@ function Lightbox({
         <ChevronLeft size={44} />
       </button>
 
-      {/* Image */}
       <div
         className="relative w-full max-w-5xl mx-16 md:mx-24"
         onClick={(e) => e.stopPropagation()}
       >
-        {img.src ? (
-          <Image
-            src={img.src}
-            alt={img.alt}
-            width={1200}
-            height={800}
-            className="object-contain max-h-[80vh] w-auto mx-auto"
-            priority
-          />
-        ) : (
-          <div className="aspect-video bg-ept-navy/80 rounded-sm flex items-center justify-center mx-auto max-w-2xl">
-            <div className="text-center">
-              <div className="w-14 h-14 border-2 border-ept-green/30 rounded-sm flex items-center justify-center mx-auto mb-4">
-                <ZoomIn size={24} className="text-ept-green/50" />
-              </div>
-              <p className="text-white/50 text-sm">{img.alt}</p>
-              <p className="text-white/25 text-xs mt-1">Add photo to /public/images/gallery/</p>
-            </div>
-          </div>
-        )}
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={1200}
+          height={800}
+          className="object-contain max-h-[80vh] w-auto mx-auto"
+          priority
+        />
         <p className="text-white/40 text-sm text-center mt-4">{img.alt}</p>
       </div>
 
-      {/* Next */}
       <button
         onClick={(e) => { e.stopPropagation(); onNext(); }}
         className="absolute right-4 md:right-8 text-white/50 hover:text-white transition-colors z-10"
@@ -132,7 +136,7 @@ function Lightbox({
   );
 }
 
-export default function GalleryGrid({ images = PLACEHOLDER_IMAGES }: { images?: GalleryImage[] }) {
+export default function GalleryGrid({ images = GALLERY_IMAGES }: { images?: GalleryImage[] }) {
   const [activeCategory, setActiveCategory] = useState("All");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
@@ -169,14 +173,11 @@ export default function GalleryGrid({ images = PLACEHOLDER_IMAGES }: { images?: 
       </div>
 
       {/* Grid */}
-      <motion.div
-        layout
-        className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3"
-      >
+      <motion.div layout className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
         <AnimatePresence mode="popLayout">
           {filtered.map((img, i) => (
             <motion.div
-              key={`${img.alt}-${img.category}`}
+              key={`${img.src}`}
               layout
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -185,19 +186,13 @@ export default function GalleryGrid({ images = PLACEHOLDER_IMAGES }: { images?: 
               className="relative aspect-square overflow-hidden rounded-sm cursor-pointer group"
               onClick={() => openLightbox(i)}
             >
-              {img.src ? (
-                <Image
-                  src={img.src}
-                  alt={img.alt}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              ) : (
-                <div className="absolute inset-0 bg-ept-navy/80 flex flex-col items-center justify-center">
-                  <ZoomIn size={20} className="text-ept-green/50 mb-2" />
-                  <p className="text-white/40 text-xs text-center px-3 leading-snug">{img.alt}</p>
-                </div>
-              )}
+              <Image
+                src={img.src}
+                alt={img.alt}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 25vw"
+              />
               <div className="absolute inset-0 bg-ept-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <ZoomIn size={28} className="text-white" />
               </div>

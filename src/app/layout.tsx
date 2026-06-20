@@ -6,6 +6,35 @@ import Footer from "@/components/layout/Footer";
 import WhatsAppButton from "@/components/layout/WhatsAppButton";
 import PageTransition from "@/components/layout/PageTransition";
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "EventPlanner"],
+  name: "Event Planners Tanzania",
+  description:
+    "Tanzania's premier event management company based in Dar es Salaam, offering corporate events, sound systems, staging, lighting, LED screens, catering, and more.",
+  url: "https://www.eventplannerstanzania.co.tz",
+  telephone: "+255655600000",
+  email: "info@eventplannerstanzania.co.tz",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Twiga House, 7th Floor",
+    addressLocality: "Dar es Salaam",
+    postalCode: "2530",
+    addressCountry: "TZ",
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: -6.8154,
+    longitude: 39.2848,
+  },
+  areaServed: { "@type": "Country", name: "Tanzania" },
+  sameAs: [
+    "https://instagram.com/eventplannerstanzania",
+    "https://facebook.com/eventplannerstanzania",
+    "https://tiktok.com/@eventplannerstanzania",
+  ],
+};
+
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
@@ -51,11 +80,20 @@ export const metadata: Metadata = {
     title: "Event Planners Tanzania — Turning Moments into Memories",
     description:
       "Tanzania's premier event management company. Corporate events, conferences, sound, staging, lighting, catering & more from Dar es Salaam.",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Event Planners Tanzania — Turning Moments into Memories",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Event Planners Tanzania",
     description: "Tanzania's premier event management company — Dar es Salaam.",
+    images: ["/opengraph-image"],
   },
 };
 
@@ -67,9 +105,14 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${playfair.variable} ${inter.variable} scroll-smooth`}
     >
       <body className="min-h-screen flex flex-col antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main className="flex-1"><PageTransition>{children}</PageTransition></main>
         <Footer />

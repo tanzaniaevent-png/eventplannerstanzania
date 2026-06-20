@@ -180,10 +180,10 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-white/10">
         <div className="container-max py-5 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-white/30 text-xs">
+          <p className="text-white/50 text-xs">
             © {new Date().getFullYear()} Event Planners Tanzania. All rights reserved.
           </p>
-          <p className="text-white/30 text-xs">
+          <p className="text-white/50 text-xs">
             www.eventplannerstanzania.co.tz
           </p>
         </div>
