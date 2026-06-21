@@ -184,7 +184,15 @@ export default function Footer() {
             © {new Date().getFullYear()} Event Planners Tanzania. All rights reserved.
           </p>
           <p className="text-white/50 text-xs">
-            www.eventplannerstanzania.co.tz
+            Developed by{" "}
+            <a
+              href="https://matowodev.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-ept-green transition-colors"
+            >
+              Matowo Dev
+            </a>
           </p>
         </div>
       </div>
