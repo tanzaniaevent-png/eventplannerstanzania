@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, ChevronLeft, ChevronRight } from "lucide-react";
 
 const rotatingImages = [
   { src: "/images/services/office.png", alt: "Event Planners Tanzania office — Twiga House, Dar es Salaam" },
@@ -75,7 +75,7 @@ export default function CompanyIntro() {
             transition={{ duration: 0.6, delay: 0.15 }}
             className="relative"
           >
-            <div className="aspect-[4/3] bg-ept-navy rounded-sm overflow-hidden relative">
+            <div className="aspect-[4/3] bg-ept-navy rounded-sm overflow-hidden relative group">
               <Image
                 src={rotatingImages[current].src}
                 alt={rotatingImages[current].alt}
@@ -85,6 +85,22 @@ export default function CompanyIntro() {
                 style={{ opacity: fading ? 0 : 1 }}
                 priority
               />
+              {/* Left arrow */}
+              <button
+                onClick={() => { setFading(true); setTimeout(() => { setCurrent((i) => (i - 1 + rotatingImages.length) % rotatingImages.length); setFading(false); }, 400); }}
+                aria-label="Previous image"
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
+              >
+                <ChevronLeft size={20} />
+              </button>
+              {/* Right arrow */}
+              <button
+                onClick={() => { setFading(true); setTimeout(() => { setCurrent((i) => (i + 1) % rotatingImages.length); setFading(false); }, 400); }}
+                aria-label="Next image"
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 rounded-full bg-black/40 hover:bg-black/70 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10"
+              >
+                <ChevronRight size={20} />
+              </button>
               {/* Dot indicators */}
               <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
                 {rotatingImages.map((_, i) => (
