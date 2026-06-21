@@ -1,9 +1,15 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { CheckCircle } from "lucide-react";
+
+const rotatingImages = [
+  { src: "/images/services/office.png", alt: "Event Planners Tanzania office — Twiga House, Dar es Salaam" },
+  { src: "/images/services/corporate-events.png", alt: "Corporate event setup by Event Planners Tanzania" },
+];
 
 const highlights = [
   "Corporate conferences & award ceremonies",
@@ -13,6 +19,17 @@ const highlights = [
 ];
 
 export default function CompanyIntro() {
+  const [current, setCurrent] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFading(true);
+      setTimeout(() => { setCurrent((i) => (i + 1) % rotatingImages.length); setFading(false); }, 400);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="section-pad bg-white">
       <div className="container-max">
@@ -50,7 +67,7 @@ export default function CompanyIntro() {
             </Link>
           </motion.div>
 
-          {/* Image placeholder — swap for <Image> once /public/images/team/office.jpg is added */}
+          {/* Auto-rotating image */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -60,14 +77,27 @@ export default function CompanyIntro() {
           >
             <div className="aspect-[4/3] bg-ept-navy rounded-sm overflow-hidden relative">
               <Image
-                src="/images/services/office.png"
-                alt="Event Planners Tanzania team"
+                src={rotatingImages[current].src}
+                alt={rotatingImages[current].alt}
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
+                className="object-cover transition-opacity duration-400"
+                style={{ opacity: fading ? 0 : 1 }}
+                priority
               />
+              {/* Dot indicators */}
+              <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                {rotatingImages.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => { setFading(true); setTimeout(() => { setCurrent(i); setFading(false); }, 400); }}
+                    aria-label={`Image ${i + 1}`}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${i === current ? "bg-white w-5" : "bg-white/50 w-1.5 hover:bg-white/80"}`}
+                  />
+                ))}
+              </div>
             </div>
-            {/* Accent block */}
+            {/* Accent blocks */}
             <div className="absolute -bottom-5 -right-5 w-32 h-32 bg-ept-green/10 rounded-sm -z-10" />
             <div className="absolute -top-5 -left-5 w-20 h-20 bg-ept-navy/10 rounded-sm -z-10" />
           </motion.div>
