@@ -95,15 +95,17 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div
+      <motion.button
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.3, duration: 0.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 flex flex-col items-center gap-2"
+        onClick={() => window.scrollBy({ top: window.innerHeight, behavior: "smooth" })}
+        aria-label="Scroll down"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/30 hover:text-white/60 transition-colors flex flex-col items-center gap-2 cursor-pointer"
       >
         <span className="text-xs uppercase tracking-widest">Scroll</span>
         <ChevronDown className="animate-bounce" size={20} />
-      </motion.div>
+      </motion.button>
     </section>
   );
 }
