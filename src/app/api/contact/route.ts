@@ -29,7 +29,7 @@ export async function POST(req: Request) {
     const toEmail = process.env.CONTACT_EMAIL || "info@eventplannerstanzania.co.tz";
 
     await resend.emails.send({
-      from: "EPT Website <onboarding@resend.dev>",
+      from: "EPT Website <info@eventplannerstanzania.co.tz>",
       to: toEmail,
       replyTo: email,
       subject: `New enquiry from ${name}${eventType ? ` — ${eventType}` : ""}`,
