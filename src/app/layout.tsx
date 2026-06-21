@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -117,6 +118,13 @@ export default function RootLayout({
         <main className="flex-1"><PageTransition>{children}</PageTransition></main>
         <Footer />
         <WhatsAppButton />
+        <Script src="https://www.googletagmanager.com/gtag/js?id=G-PG6XW35VZ9" strategy="afterInteractive" />
+        <Script id="gtag-init" strategy="afterInteractive">{`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-PG6XW35VZ9');
+        `}</Script>
       </body>
     </html>
   );
