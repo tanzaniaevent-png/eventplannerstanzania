@@ -16,6 +16,11 @@ export const SERVICE_NAV_ITEMS = [
   { id: "destination", label: "Destination Mgmt" },
   { id: "interpretation", label: "Interpretation" },
   { id: "photography", label: "Photography & Video" },
+  { id: "wedding-planning", label: "Wedding Planning" },
+  { id: "exhibitions", label: "Exhibitions" },
+  { id: "hotel-booking", label: "Hotel Booking" },
+  { id: "business-mission", label: "Business Mission" },
+  { id: "meet-and-assist", label: "Meet & Assist" },
 ];
 
 function useActiveSection() {

@@ -16,6 +16,11 @@ import {
   Globe,
   Languages,
   Camera,
+  Heart,
+  LayoutGrid,
+  BedDouble,
+  Briefcase,
+  UserCheck,
 } from "lucide-react";
 
 const services = [
@@ -97,6 +102,36 @@ const services = [
     desc: "Professional photography and videography for corporate events, conferences, weddings, and functions.",
     href: "/services#photography",
   },
+  {
+    icon: Heart,
+    name: "Wedding Planning",
+    desc: "From venue selection and décor to catering and day-of coordination — a perfect wedding, stress-free.",
+    href: "/services#wedding-planning",
+  },
+  {
+    icon: LayoutGrid,
+    name: "Exhibitions",
+    desc: "Booth design, stand construction, display branding, and full management for trade shows and fairs.",
+    href: "/services#exhibitions",
+  },
+  {
+    icon: BedDouble,
+    name: "Hotel Booking",
+    desc: "Group reservations, negotiated corporate rates, VIP check-in, and airport transfer coordination.",
+    href: "/services#hotel-booking",
+  },
+  {
+    icon: Briefcase,
+    name: "Business Mission",
+    desc: "Delegation support, itinerary planning, B2B meeting facilitation, and site visits for trade missions.",
+    href: "/services#business-mission",
+  },
+  {
+    icon: UserCheck,
+    name: "Meet and Assist",
+    desc: "Airport meet & greet, immigration support, luggage handling, and ground transfers for your guests.",
+    href: "/services#meet-and-assist",
+  },
 ];
 
 export default function ServicesGrid() {
@@ -112,7 +147,7 @@ export default function ServicesGrid() {
           className="text-center mb-14"
         >
           <p className="text-ept-green text-xs font-semibold uppercase tracking-[0.2em] mb-3">What We Do</p>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our 13 Services</h2>
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our 18 Services</h2>
           <p className="text-gray-500 text-lg max-w-xl mx-auto">
             Everything you need to deliver an extraordinary event — under one roof.
           </p>

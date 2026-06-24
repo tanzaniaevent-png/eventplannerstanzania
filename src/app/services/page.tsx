@@ -7,7 +7,7 @@ import ServiceImageSwitcher from "@/components/services/ServiceImageSwitcher";
 export const metadata: Metadata = {
   title: "Our Services",
   description:
-    "Explore all 13 services offered by Event Planners Tanzania — from corporate events and sound systems to catering, interpretation, and photography.",
+    "Explore all 18 services offered by Event Planners Tanzania — from corporate events and sound systems to wedding planning, hotel booking, and meet & assist.",
 };
 
 const services = [
@@ -160,6 +160,46 @@ const services = [
     items: ["Event photography", "Videography & filming", "Corporate coverage", "Conference documentation", "Post-production editing"],
     images: ["/images/services/Photography & Video.png"],
   },
+  {
+    id: "wedding-planning",
+    name: "Wedding Planning",
+    description:
+      "Memorable weddings tailored to your vision — from intimate ceremonies to grand celebrations. We manage every detail, from venue selection and décor to catering, entertainment, and day-of coordination.",
+    items: ["Venue selection & coordination", "Décor & floral design", "Catering arrangements", "Entertainment booking", "Guest management", "Day-of coordination"],
+    images: ["/images/services/wedding-planning.png"],
+  },
+  {
+    id: "exhibitions",
+    name: "Exhibitions",
+    description:
+      "Professional exhibition management for trade shows, art showcases, and product fairs. We design, build, and manage booth setups that attract and engage visitors.",
+    items: ["Exhibition booth design", "Stand construction & setup", "Display graphics & branding", "Visitor engagement solutions", "Traffic management", "Dismantling & logistics"],
+    images: ["/images/services/exhibitions.png"],
+  },
+  {
+    id: "hotel-booking",
+    name: "Hotel Booking",
+    description:
+      "Seamless accommodation arrangements for delegates, guests, and corporate travelers. We negotiate preferential rates and handle all reservations end-to-end.",
+    items: ["Group room reservations", "Negotiated corporate rates", "Airport transfer coordination", "VIP check-in arrangements", "Conference room booking", "Extended stay management"],
+    images: ["/images/services/hotel-booking.png"],
+  },
+  {
+    id: "business-mission",
+    name: "Business Mission",
+    description:
+      "Comprehensive support for business delegations and trade missions — from visa assistance and itinerary planning to site visits and B2B meeting facilitation.",
+    items: ["Delegation coordination", "Visa & travel support", "Itinerary planning", "B2B meeting facilitation", "Site visits & factory tours", "Cultural briefings"],
+    images: ["/images/services/business-mission.png"],
+  },
+  {
+    id: "meet-and-assist",
+    name: "Meet and Assist",
+    description:
+      "Professional airport meet-and-assist services ensuring your guests arrive and depart smoothly. Our team handles customs, immigration, and ground transfers with care.",
+    items: ["Airport meet & greet", "Immigration & customs support", "Luggage handling", "VIP lounge access", "Ground transportation", "24/7 on-call assistance"],
+    images: ["/images/services/meet-and-assist.png"],
+  },
 ];
 
 export default function ServicesPage() {
@@ -170,10 +210,10 @@ export default function ServicesPage() {
         <div className="container-max">
           <p className="text-ept-green text-xs font-semibold uppercase tracking-[0.2em] mb-4">What We Offer</p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold text-white mb-6 leading-tight max-w-2xl">
-            13 Services. One Partner.
+            18 Services. One Partner.
           </h1>
           <p className="text-white/60 text-lg max-w-xl leading-relaxed">
-            From sound and staging to catering and interpretation — everything your event needs, delivered by one trusted team.
+            From sound and staging to wedding planning, hotel booking, and meet & assist — everything your event needs, delivered by one trusted team.
           </p>
         </div>
       </section>

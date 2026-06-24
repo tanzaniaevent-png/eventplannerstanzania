@@ -33,6 +33,8 @@ const jsonLd = {
     "https://instagram.com/eventplannerstanzania",
     "https://facebook.com/eventplannerstanzania",
     "https://tiktok.com/@eventplannerstanzania",
+    "https://youtube.com/@eventplannerstanzania9924",
+    "https://linkedin.com/company/eventplannerstanzania",
   ],
 };
 
