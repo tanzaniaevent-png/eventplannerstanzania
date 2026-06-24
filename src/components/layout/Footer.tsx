@@ -124,7 +124,7 @@ export default function Footer() {
                 <YouTubeIcon size={16} />
               </a>
               <a
-                href="https://linkedin.com/company/eventplannerstanzania"
+                href="https://www.linkedin.com/in/event-planners-tanzania-40825a215/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"

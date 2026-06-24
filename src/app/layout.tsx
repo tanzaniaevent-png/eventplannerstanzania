@@ -34,7 +34,7 @@ const jsonLd = {
     "https://facebook.com/eventplannerstanzania",
     "https://tiktok.com/@eventplannerstanzania",
     "https://youtube.com/@eventplannerstanzania9924",
-    "https://linkedin.com/company/eventplannerstanzania",
+    "https://www.linkedin.com/in/event-planners-tanzania-40825a215/",
   ],
 };
 

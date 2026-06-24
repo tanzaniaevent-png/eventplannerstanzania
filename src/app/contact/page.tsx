@@ -137,7 +137,7 @@ export default function ContactPage() {
                     { href: "https://facebook.com/eventplannerstanzania", icon: <FacebookIcon size={17} />, label: "Facebook" },
                     { href: "https://tiktok.com/@eventplannerstanzania", icon: <TikTokIcon size={17} />, label: "TikTok" },
                     { href: "https://youtube.com/@eventplannerstanzania9924", icon: <YouTubeIcon size={17} />, label: "YouTube" },
-                    { href: "https://linkedin.com/company/eventplannerstanzania", icon: <LinkedInIcon size={17} />, label: "LinkedIn" },
+                    { href: "https://www.linkedin.com/in/event-planners-tanzania-40825a215/", icon: <LinkedInIcon size={17} />, label: "LinkedIn" },
                   ].map((s) => (
                     <a
                       key={s.label}
