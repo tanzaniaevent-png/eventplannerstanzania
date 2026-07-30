@@ -15,7 +15,7 @@ const team = [
   { name: "Godlove Gitela", title: "General Manager", photo: "/images/team/Godlove_Gitela_General_Manager 5.jpg" },
   { name: "Isaya Mihafu", title: "Head of Sales & Marketing", photo: "/images/team/Isaya_Mihafu_Head_of_Sales_and_Marketing..jpeg" },
   { name: "Mateo Jones", title: "Head of Client Relations", photo: "/images/team/Mateo_Jones_Head_of_Client_Relations.png" },
-  { name: "Olivia Johnson", title: "Administrator", photo: "/images/team/Olivia_Johnson_Administrator.png" },
+  { name: "Olivia Johnson", title: "Head of Administration & Planning", photo: "/images/team/Olivia_Johnson_Head_of_Administration_and_Planning.png" },
 ];
 
 const coreValues = [
