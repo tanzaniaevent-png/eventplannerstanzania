@@ -186,7 +186,12 @@ export default function GalleryGrid({ images = GALLERY_IMAGES }: { images?: Gall
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
 
   const filtered =
-    activeCategory === "All" ? images : images.filter((img) => img.category === activeCategory);
+    activeCategory === "All"
+      ? [
+          ...images.filter((img) => img.category === "Corporate Events"),
+          ...images.filter((img) => img.category !== "Corporate Events"),
+        ]
+      : images.filter((img) => img.category === activeCategory);
 
   const openLightbox = (index: number) => setLightboxIndex(index);
   const closeLightbox = () => {
