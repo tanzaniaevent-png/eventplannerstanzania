@@ -14,7 +14,7 @@ const team = [
   { name: "Ernest C. Shenkunde", title: "CEO", photo: "/images/team/Ernest_C_Shenkunde _CEO 2.jpg" },
   { name: "Godlove Gitela", title: "General Manager", photo: "/images/team/Godlove_Gitela_General_Manager 5.jpg" },
   { name: "Isaya Mihafu", title: "Head of Sales & Marketing", photo: "/images/team/Isaya_Mihafu_Head_of_Sales_and_Marketing..jpeg" },
-  { name: "Mateo Jones", title: "Head of ICT", photo: "/images/team/Mateo_Jones_Head_of_ICT.png" },
+  { name: "Mateo Jones", title: "Head of Client Relations", photo: "/images/team/Mateo_Jones_Head_of_Client_Relations.png" },
   { name: "Olivia Johnson", title: "Administrator", photo: "/images/team/Olivia_Johnson_Administrator.png" },
 ];
 
