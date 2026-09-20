@@ -14,7 +14,7 @@ const team = [
   { name: "Ernest C. Shenkunde", title: "CEO", photo: "/images/team/Ernest_C_Shenkunde _CEO 2.jpg" },
   { name: "Isaya Mihafu", title: "Head of Sales & Marketing", photo: "/images/team/Isaya_Mihafu_Head_of_Sales_and_Marketing..jpeg" },
   { name: "Sarah Mwazyunga", title: "Company Secretary", photo: "/images/team/Sarah_Mwazyunga_Company_Secretary.jpeg" },
-  { name: "Jacqueline Lusimbi", title: "Sales Executive Manager", photo: "/images/team/Jacqueline_Lusimbi_Sales_Executive_Manager.jpeg" },
+  { name: "Jacqueline Rusimbi", title: "Sales Executive Manager", photo: "/images/team/Jacqueline_Rusimbi_Sales_Executive_Manager.jpeg" },
   { name: "Godbless Mbuya", title: "Business Development Manager", photo: "/images/team/Godbless_Mbuya_Business_Development_Manager.jpeg" },
 ];
 
